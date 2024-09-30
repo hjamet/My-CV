@@ -262,10 +262,10 @@
 % (overwritten by babel)
 \providecommand{\pagename}{Page}
 %
-% Setting up page style and page limit error:
+% Setting up page style and page limit warning:
 \ExplSyntaxOn
 \msg_new:nnnn { CV } { pagenumber } 
-    { Page~limit:~\thepagelimit\ ~pages,~exceeded.} { Use~option~'multipleCVs'~to~exceed~page~limit. }
+    { Page~limit:~\thepagelimit\ ~pages,~exceeded.} { Consider~using~option~'multipleCVs'~for~longer~CVs. }
 \msg_new:nnnn { CV } { footer conflict }
     { Current~page~number~options~can~not~be~combined } { Chose~one~option }
 
@@ -275,7 +275,7 @@
 \fancyfoot{
 \if@pagefooter
     \if@pageclassic
-        \msg_error:nn { CV } { footer conflict }
+        \msg_warning:nn { CV } { footer conflict }
     \else%
         \ifodd\value{page}\else%
         \softtext{\hfill \page\ 2}
@@ -293,8 +293,7 @@
 \if@longCV
 \else
     \ifnum\value{page}>\thepagelimit
-        { \msg_fatal:nn {CV}{pagenumber} }
-        {}
+        { \msg_warning:nn {CV}{pagenumber} }
     \fi%
 \fi%
 \ifodd\value{page}
