@@ -31,3 +31,13 @@
 \definecolor{deep_purple}{HTML}{591F93}
 
 \usepackage{lipsum}
+
+% Ajout pour les badges de compétences
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+
+\newcommand{\skill}[1]{%
+    \tikz[baseline]\node[draw=Overleaf_green,fill=Overleaf_green,
+    rounded corners=2pt,inner sep=1pt,
+    text=white,font=\bfseries\sffamily\small]{\MakeUppercase{#1}};%
+}
