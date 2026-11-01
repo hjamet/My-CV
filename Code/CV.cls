@@ -464,7 +464,7 @@
     column{1} = {font=\bfseries},
     width=1.1\textwidth,
     colsep = 15pt,
-    rowsep=0.5}%
+    rowsep=0.5pt}%
     }%
     { \end{tblr} \par\addvspace{\topsep} }
 % Date and location for CV_table:
